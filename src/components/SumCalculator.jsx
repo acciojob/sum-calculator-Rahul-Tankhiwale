@@ -15,18 +15,15 @@ export default function SumCalculator() {
     }
   };
 
+  // Synchronous sum calculation
   useEffect(() => {
-    // Async sum calculation without async/await
-    let isCancelled = false;
-    setTimeout(() => {
-      if (!isCancelled) setSum(numbers.reduce((acc, curr) => acc + curr, 0));
-    }, 0);
-    return () => (isCancelled = true);
+    const total = numbers.reduce((acc, curr) => acc + curr, 0);
+    setSum(total);
   }, [numbers]);
 
   return (
     <div>
-      <h1>Sum Calculator</h1> {/* Must be h1 for test */}
+      <h1>Sum Calculator</h1>
       <input
         type="number"
         value={inputValue}
@@ -34,8 +31,8 @@ export default function SumCalculator() {
         onKeyDown={handleKeyDown}
         placeholder="Enter number & press Enter"
       />
-      {/* <p id="numbers">Numbers: {numbers.join(", ")}</p> use p tag */}
-      <p id="sum">Sum: {sum}</p> {/* use p tag */}
+      <p id="numbers">Numbers: {numbers.join(", ")}</p>
+      <p id="sum">Sum: {sum}</p>
     </div>
   );
 }
