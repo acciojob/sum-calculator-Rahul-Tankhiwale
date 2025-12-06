@@ -34,8 +34,8 @@ export default function SumCalculator() {
         onKeyDown={handleKeyDown}
         placeholder="Enter number & press Enter"
       />
-      <p id="numbers">Numbers: {numbers.join(", ")}</p> {/* use p tag */}
-      <p id="sum">Total Sum: {sum}</p> {/* use p tag */}
+      {/* <p id="numbers">Numbers: {numbers.join(", ")}</p> use p tag */}
+      <p id="sum">Sum: {sum}</p> {/* use p tag */}
     </div>
   );
 }
